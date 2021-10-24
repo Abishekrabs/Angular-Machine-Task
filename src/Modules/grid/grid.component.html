@@ -1,0 +1,16 @@
+<div class="row justify-content-center" *ngIf="jsonData && jsonData.length > 0">
+    <div class="col-auto">
+        <table>
+            <thead>
+                <tr>
+                    <th *ngFor="let header of _object.keys(jsonData[0])">{{ header | uppercase }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of jsonData">
+                    <td *ngFor="let objKey of _object.keys(row)">{{ row[objKey] }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
